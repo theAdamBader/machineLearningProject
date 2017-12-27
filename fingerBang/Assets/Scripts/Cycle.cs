@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+	REFERENCE:
+		Day/Night Cycle by Aaron Hibberd: https://www.youtube.com/watch?v=DmhSWEJjphQ&t=381s
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

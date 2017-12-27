@@ -35,4 +35,8 @@ public class LeftBullet : MonoBehaviour {
 		// Destroy the bullet after 2 seconds
 		Destroy(bullet, 2.0f);
 	}
+
+	void OnCollisionEnter(){
+		Destroy (gameObject);
+	}
 }

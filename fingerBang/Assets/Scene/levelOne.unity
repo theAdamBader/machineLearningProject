@@ -442,6 +442,72 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1295086288}
   m_Script: {fileID: 11500000, guid: a04122797dd84ca43a07055f12d91e0f, type: 3}
+--- !u!1001 &352381079
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4436459532139448, guid: eb1ee70eafabba149a15463a40b7a77c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -3.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436459532139448, guid: eb1ee70eafabba149a15463a40b7a77c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436459532139448, guid: eb1ee70eafabba149a15463a40b7a77c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.8084869
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436459532139448, guid: eb1ee70eafabba149a15463a40b7a77c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436459532139448, guid: eb1ee70eafabba149a15463a40b7a77c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436459532139448, guid: eb1ee70eafabba149a15463a40b7a77c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436459532139448, guid: eb1ee70eafabba149a15463a40b7a77c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436459532139448, guid: eb1ee70eafabba149a15463a40b7a77c, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888957643886750, guid: eb1ee70eafabba149a15463a40b7a77c, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 135782378767506164, guid: eb1ee70eafabba149a15463a40b7a77c,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23858662911695140, guid: eb1ee70eafabba149a15463a40b7a77c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 135782378767506164, guid: eb1ee70eafabba149a15463a40b7a77c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888957643886750, guid: eb1ee70eafabba149a15463a40b7a77c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 54845504282089896, guid: eb1ee70eafabba149a15463a40b7a77c, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: eb1ee70eafabba149a15463a40b7a77c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &384613680 stripped
 Transform:
   m_PrefabParentObject: {fileID: 415952, guid: c8515ebee271c0649b9db1321f3026a4, type: 2}
@@ -520,6 +586,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1006918499204824, guid: 695188c841754c24ba91b13b630c317f,
     type: 2}
   bulletSpawn: {fileID: 827591535}
+  damage: 10
 --- !u!1 &827591534
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,6 +762,23 @@ Prefab:
     - {fileID: 11406336, guid: b9c7aaf0d314cb847a3b2a20e893f1b6, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b9c7aaf0d314cb847a3b2a20e893f1b6, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &950138490 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1888957643886750, guid: eb1ee70eafabba149a15463a40b7a77c,
+    type: 2}
+  m_PrefabInternal: {fileID: 352381079}
+--- !u!114 &950138496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 950138490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d918692ff4ca39f43a4028500feade64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 20
 --- !u!1 &1177099927
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +899,7 @@ Transform:
   m_LocalScale: {x: -0.45863178, y: -0.045659106, z: -0.27395463}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!154 &1202084740
 TerrainCollider:
@@ -1038,7 +1122,7 @@ Transform:
   - {fileID: 177824585}
   - {fileID: 53095966}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1573252529
 Prefab:

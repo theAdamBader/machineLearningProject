@@ -7,6 +7,7 @@ public class RightBullet : MonoBehaviour {
 	public GameObject bulletPrefab;
 	public Transform bulletSpawn;
 
+	public int damage = 10;
 
 	// Use this for initialization
 	void Start () {
@@ -30,10 +31,19 @@ public class RightBullet : MonoBehaviour {
 		// Add velocity to the bullet
 		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6;
 
-		Rigidbody bulletRigid;
-		bulletRigid = bullet.GetComponent<Rigidbody>();
+
+		RaycastHit hit;
+		Ray ray = new Ray (transform.position, transform.forward);
+		if (Physics.Raycast(ray, out hit, 100f)){
+			if (hit.transform.tag == "Enemy") {
+				hit.transform.GetComponent<EnemyHealth> ().damageTaken(damage);
+			}
+
+		}
 
 		// Destroy the bullet after 2 seconds
 		Destroy(bullet, 2.0f);
 	}
+
+
 }

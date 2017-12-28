@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour {
 
-	public int currentHealth = 10;
+	//int maxHealth = 30;
+	public int currentHealth = 30;
+
+	void Update(){
+	
+	}
 
 	public void damageTaken (int amount){
 		currentHealth -= amount;

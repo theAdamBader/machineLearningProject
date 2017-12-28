@@ -29,14 +29,9 @@ public class LeftBullet : MonoBehaviour {
 		// Add velocity to the bullet
 		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6;
 
-		Rigidbody bulletRigid;
-		bulletRigid = bullet.GetComponent<Rigidbody>();
-
 		// Destroy the bullet after 2 seconds
 		Destroy(bullet, 2.0f);
 	}
 
-	void OnCollisionEnter(){
-		Destroy (gameObject);
-	}
+
 }

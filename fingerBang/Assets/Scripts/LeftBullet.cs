@@ -2,6 +2,8 @@
 REFERENCE:
 	Shooting Script: https://unity3d.com/learn/tutorials/temas/multiplayer-networking/shooting-single-player?playlist=29690
 	Delay Shooting: https://answers.unity.com/questions/283377/how-to-delay-a-shot.html
+	Reload Bullet: https://www.youtube.com/watch?v=kAx5g9V5bcM
+	No Ammo: https://www.youtube.com/watch?v=k4dTfJNaLmc
 */
 
 using System.Collections;
@@ -19,7 +21,7 @@ public class LeftBullet : MonoBehaviour {
 	public int maxAmmo = 10;
 	private int currentAmmo;
 	public float reloadSpeed = 1f;
-	private bool isReloading = false;
+
 
 	void Start(){
 		currentAmmo = maxAmmo;
@@ -29,23 +31,21 @@ public class LeftBullet : MonoBehaviour {
 	void Update(){
 
 
-		if (Input.GetKeyDown (KeyCode.A)) {
+		if (Input.GetKeyDown (KeyCode.S)) {
 			StartCoroutine (Reload ());
 			return;
 		}
 
 
-		if (Input.GetKeyDown(KeyCode.R) && Time.time > nextShot){
+		if (Input.GetKeyDown(KeyCode.E) && Time.time > nextShot){
 			if (currentAmmo > 0) {
 				nextShot = Time.time + fireRate;
 				Fire ();
 			}
 		}
-
 	}
 
 	void Fire(){
-
 		// Create the Bullet from the Bullet Prefab
 		GameObject bullet;
 		bullet = Instantiate (bulletPrefab, bulletSpawn.transform.position, bulletSpawn.transform.rotation) as GameObject;
@@ -60,14 +60,10 @@ public class LeftBullet : MonoBehaviour {
 	}
 
 	IEnumerator Reload(){
-
-		isReloading = true;
 		Debug.Log ("Reloading...");
 
 		yield return new WaitForSeconds (reloadSpeed);
 
 		currentAmmo = maxAmmo;
-
-		isReloading = false;
 	}
 }

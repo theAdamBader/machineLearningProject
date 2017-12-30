@@ -6,22 +6,12 @@ public class EnemyDamage : MonoBehaviour {
 
 	public int damage = 10;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	void OnCollisionEnter(Collision hit){
 
-	void OnCollisionEnter(Collision other){
-
-		if (other.gameObject.tag == "Enemy") {
-			other.gameObject.GetComponent<EnemyHealth> ().damageTaken (damage);
+		if (hit.gameObject.tag == "Enemy") {
+			hit.gameObject.GetComponent<EnemyHealth> ().damageTaken (damage);
 		}
 
-		Debug.Log (other.transform.name);
+		Debug.Log (hit.transform.name);
 	}
 }

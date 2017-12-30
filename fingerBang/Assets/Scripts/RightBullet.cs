@@ -21,7 +21,7 @@ public class RightBullet : MonoBehaviour {
 	public int maxAmmo = 10;
 	private int currentAmmo;
 	public float reloadSpeed = 1f;
-	private bool isReloading = false;
+
 
 	void Start(){
 		currentAmmo = maxAmmo;
@@ -63,14 +63,11 @@ public class RightBullet : MonoBehaviour {
 
 	IEnumerator Reload(){
 
-		isReloading = true;
 		Debug.Log ("Reloading...");
 
 		yield return new WaitForSeconds (reloadSpeed);
 
 		currentAmmo = maxAmmo;
-
-		isReloading = false;
 	}
 		
 }

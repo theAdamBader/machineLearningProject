@@ -24,26 +24,34 @@ public class RightBullet : MonoBehaviour {
 
 
 	void Start(){
-		currentAmmo = maxAmmo;
+
+		//Starts with current ammo
+		currentAmmo = maxAmmo; 
+
 	}
 
 	// Update is called once per frame
 	void Update(){
 
-
+		 //If key press A to reload weapon
 		 if (Input.GetKeyDown (KeyCode.A)) {
+
+			//Start Coroutine, starts the reload function; then returns back to the function
 			StartCoroutine (Reload ());
 			return;
+
 			}
 		
-
+		//If key press R then shoot bullet
 		if (Input.GetKeyDown(KeyCode.R) && Time.time > nextShot){
+
+			//If current ammo is more than zero then fire weapon
 			if (currentAmmo > 0) {
 				nextShot = Time.time + fireRate;
 				Fire ();
+
 			}
 		}
-
 	}
 
 	void Fire(){
@@ -58,16 +66,20 @@ public class RightBullet : MonoBehaviour {
 		// Destroy the bullet after 2 seconds
 		Destroy(bullet, 2.0f);
 
+		//Lose one bullet everytime the weapon is shot
 		currentAmmo--;
+
 	}
 
 	IEnumerator Reload(){
-
+		
 		Debug.Log ("Reloading...");
 
+		//Get accessor to a new wait with a reload speed
 		yield return new WaitForSeconds (reloadSpeed);
 
+		//When reloading, current ammo grabs the max ammo
 		currentAmmo = maxAmmo;
+
 	}
-		
 }

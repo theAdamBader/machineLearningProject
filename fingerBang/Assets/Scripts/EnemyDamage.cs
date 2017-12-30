@@ -13,5 +13,6 @@ public class EnemyDamage : MonoBehaviour {
 		}
 
 		Debug.Log (hit.transform.name);
+
 	}
 }

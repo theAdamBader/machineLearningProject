@@ -9,13 +9,11 @@ using UnityEngine;
 
 public class Cycle : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
 	// Update is called once per frame
 	void Update () {
+
+		//Rotates the objects, sun and moon cycle
 		transform.RotateAround (Vector3.zero, Vector3.right, 10f * Time.deltaTime);
+
 	}
 }

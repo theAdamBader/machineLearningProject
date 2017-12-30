@@ -489,7 +489,7 @@ Prefab:
     - target: {fileID: 114408826549148038, guid: d7ff13e215ce0fc40ab6e9f8ebcd2f51,
         type: 2}
       propertyPath: currentHealth
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d7ff13e215ce0fc40ab6e9f8ebcd2f51, type: 2}
@@ -638,7 +638,7 @@ MonoBehaviour:
     type: 2}
   bulletSpawn: {fileID: 827591535}
   fireRate: 0.5
-  maxAmmo: 3
+  maxAmmo: 10
   reloadSpeed: 1
 --- !u!1 &827591534
 GameObject:
@@ -1933,6 +1933,8 @@ MonoBehaviour:
     type: 2}
   bulletSpawn: {fileID: 1585133172}
   fireRate: 0.5
+  maxAmmo: 10
+  reloadSpeed: 1
 --- !u!1001 &1907046346
 Prefab:
   m_ObjectHideFlags: 0

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerHurt : MonoBehaviour {
 
-	public int damage = 5;
+	public int playerDamage = 5;
 
-	void OnCollisionEnter(Collision hit){
+	void OnCollisionEnter(Collision playerHit){
 
-		if (hit.gameObject.tag == "Player") {
-			hit.gameObject.GetComponent<PlayerHealth> ().damageTaken (damage);
+		if (playerHit.gameObject.tag == "Player") {
+			playerHit.gameObject.GetComponent<PlayerHealth> ().damagePlayerTaken (playerDamage);
 		}
 	}
 }

@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour {
 
-	public const int maxHealth = 100;
-	public int currentHealth = maxHealth;
+	public const int maxPlayerHealth = 100;
+	public int currenPlayertHealth = maxPlayerHealth;
 
-	//Public void damageTaken allows it to be used on other scripts (used on PlayerHurt.cs)
-	public void damageTaken (int amount){
+	//Public void damagePlayerTaken allows it to be used on other scripts (used on PlayerHurt.cs)
+	public void damagePlayerTaken (int amount){
 
-		currentHealth -= amount;
+		currenPlayertHealth -= amount;
 
-		if (currentHealth <= 0) {
+		if (currenPlayertHealth <= 0) {
 
 			//If players's health reaches zero then "add gameState later"
 			Debug.Log("Dead...");

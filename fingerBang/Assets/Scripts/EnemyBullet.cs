@@ -8,7 +8,7 @@ public class EnemyBullet : MonoBehaviour {
 	public Transform bulletSpawn;
 
 	public float fireRate = 3.0f;
-	private float nextShot = 2.0f;
+	private float nextShot = 0.0f;
 	float rotationSpeed = 3.0f;
 
 	// Use this for initialization
@@ -40,7 +40,7 @@ public class EnemyBullet : MonoBehaviour {
 		bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 16;
 
 		// Destroy the bullet after 2 seconds
-		Destroy(bullet, 20.0f);
+		Destroy(bullet, 2.0f);
 
 	}
 }

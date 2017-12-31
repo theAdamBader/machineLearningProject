@@ -1,16 +1,34 @@
-﻿using System.Collections;
+﻿/*
+REFERENCE
+	Health Bar: https://www.youtube.com/watch?v=GfuxWs6UAJQ
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour {
 
-	public const int maxPlayerHealth = 100;
-	public int currenPlayertHealth = maxPlayerHealth;
+	public const float maxPlayerHealth = 100;
+	public float currenPlayertHealth = maxPlayerHealth;
+	public Slider healthBar;
+
+	void Start (){
+		currenPlayertHealth = maxPlayerHealth;
+
+		healthBar.value = calculateHealth ();
+	}
+
+	void Update(){
+		
+	}
 
 	//Public void damagePlayerTaken allows it to be used on other scripts (used on PlayerHurt.cs)
 	public void damagePlayerTaken (int amount){
 
 		currenPlayertHealth -= amount;
+		healthBar.value = calculateHealth ();
 
 		if (currenPlayertHealth <= 0) {
 
@@ -18,5 +36,11 @@ public class PlayerHealth : MonoBehaviour {
 			Debug.Log("Dead...");
 
 		}
+	}
+
+	float calculateHealth(){
+	
+		return currenPlayertHealth / maxPlayerHealth;
+	
 	}
 }

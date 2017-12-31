@@ -300,7 +300,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &65822212846088468
 BoxCollider:
@@ -361,7 +361,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d918692ff4ca39f43a4028500feade64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 10
+  deathEffect: {fileID: 1578872400155938, guid: 17bc538eb06b36441bde32c5047f83c5,
+    type: 2}
+  currentHealth: 20
 --- !u!114 &114405989763229544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -373,9 +375,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1684d15155b7fb4d8a27f37388242ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  bulletSpawn: {fileID: 0}
-  fireRate: 0.4
+  bulletPrefab: {fileID: 1777781670574336, guid: 6083d503fd7b37d45b11b700cf944caa,
+    type: 2}
+  bulletSpawn: {fileID: 4270879893365336}
+  fireRate: 3
 --- !u!114 &114780444485708374
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -37,8 +37,8 @@ public class EnemyMovement : MonoBehaviour {
 		//Move to the player
 		transform.position += transform.forward * movementSpeed * Time.deltaTime;
 
-		//Destroy after 20 seconds
-		Destroy (gameObject, 16.0f);
+		//Destroy after 10 seconds
+		Destroy (gameObject, 10.0f);
 
 	}
 }

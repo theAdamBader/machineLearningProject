@@ -9,14 +9,15 @@ public class ScoreManager : MonoBehaviour {
 
 	Text textScore;
 
-	// Use this for initialization
 	void Awake () {
+		//Gets Text UI added with a score = 0
 		textScore = GetComponent<Text> ();
 		score = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		//Everytime enemy dies then updates score
 		textScore.text = "Score: " + score;
 	}
 }

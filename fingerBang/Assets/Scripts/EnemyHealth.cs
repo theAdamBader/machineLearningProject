@@ -30,6 +30,7 @@ public class EnemyHealth : MonoBehaviour {
 			//When enemy destroyed then activate particle
 			Destroy (death.gameObject, 1f);
 
+			//Calls the ScoreManager.cs and the score member and adds what the score value is
 			ScoreManager.score += scoreValue;
 		}
 	}

@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+REFERENCE
+	Score Manager: https://unity3d.com/learn/tutorials/projects/survival-shooter-tutorial/scoring-points
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

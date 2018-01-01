@@ -1,6 +1,7 @@
 ﻿/*
 REFERENCE:
 	Particle System: https://answers.unity.com/questions/818762/particle-effect-on-enemy-death.html
+	Score Manager: https://unity3d.com/learn/tutorials/projects/survival-shooter-tutorial/scoring-points
 */
 
 using System.Collections;

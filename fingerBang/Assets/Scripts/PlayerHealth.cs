@@ -1,5 +1,6 @@
 ﻿/*
 REFERENCE
+	Health: https://unity3d.com/learn/tutorials/topics/multiplayer-networking/player-health-single-player
 	Health Bar: https://www.youtube.com/watch?v=GfuxWs6UAJQ
 */
 

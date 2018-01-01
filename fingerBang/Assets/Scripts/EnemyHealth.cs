@@ -13,6 +13,8 @@ public class EnemyHealth : MonoBehaviour {
 	public const int maxHealth = 30;
 	public int currentHealth = maxHealth;
 
+	public int scoreValue = 5;
+
 	//Public void damageTaken allows it to be used on other scripts (used on EnemyDamage.cs)
 	public void damageTaken (int amount){
 		
@@ -27,6 +29,8 @@ public class EnemyHealth : MonoBehaviour {
 
 			//When enemy destroyed then activate particle
 			Destroy (death.gameObject, 1f);
+
+			ScoreManager.score += scoreValue;
 		}
 	}
 }

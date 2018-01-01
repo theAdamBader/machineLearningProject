@@ -9,6 +9,7 @@ REFERENCE:
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LeftBullet : MonoBehaviour {
 
@@ -22,11 +23,15 @@ public class LeftBullet : MonoBehaviour {
 	private int currentAmmo;
 	public float reloadSpeed = 1f;
 
+	public Text leftAmmoCount;
+
 
 	void Start(){
 		
 		//Starts with current ammo
 		currentAmmo = maxAmmo; 
+
+		ammoCounts ();
 	}
 
 
@@ -66,6 +71,8 @@ public class LeftBullet : MonoBehaviour {
 
 		//Lose one bullet everytime the weapon is shot
 		currentAmmo--;
+
+		ammoCounts ();
 	}
 
 	IEnumerator Reload(){
@@ -77,5 +84,12 @@ public class LeftBullet : MonoBehaviour {
 
 		//When reloading, current ammo grabs the max ammo
 		currentAmmo = maxAmmo;
+
+		ammoCounts ();
+	}
+
+	void ammoCounts(){
+
+		leftAmmoCount.text = "Left Ammo: " + currentAmmo + "/" + maxAmmo.ToString();
 	}
 }

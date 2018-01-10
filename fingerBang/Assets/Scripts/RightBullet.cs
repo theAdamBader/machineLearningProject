@@ -38,7 +38,7 @@ public class RightBullet : MonoBehaviour {
 	void Update(){
 
 		 //If key press A to reload weapon
-		 if (Input.GetKeyDown (KeyCode.A)) {
+		if (Input.GetKeyDown (KeyCode.Alpha2)) {
 
 			//Start Coroutine, starts the reload function; then returns back to the function
 			StartCoroutine (Reload ());
@@ -47,7 +47,7 @@ public class RightBullet : MonoBehaviour {
 			}
 		
 		//If key press R then shoot bullet
-		if (Input.GetKeyDown(KeyCode.R) && Time.time > nextShot){
+		if (Input.GetKeyDown(KeyCode.Alpha1) && Time.time > nextShot){
 
 			//If current ammo is more than zero then fire weapon
 			if (currentAmmo > 0) {

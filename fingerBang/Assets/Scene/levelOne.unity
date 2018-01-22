@@ -771,7 +771,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 475832229}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74b10740717c9684397e13f7c5801158, type: 3}
   m_Name: 
@@ -783,6 +783,26 @@ MonoBehaviour:
   maxAmmo: 10
   reloadSpeed: 1
   rightAmmoCount: {fileID: 1700503752}
+--- !u!114 &475832234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 475832229}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0079066fab4695408c19aaf542139f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RemoteIP: 127.0.0.1
+  SendToPort: 6448
+  ListenerPort: 12000
+  controller: {fileID: 475832230}
+  bulletPrefab: {fileID: 1006918499204824, guid: 695188c841754c24ba91b13b630c317f,
+    type: 2}
+  bulletSpawn: {fileID: 827591535}
+  fireRate: 0.4
+  maxAmmo: 10
 --- !u!1 &590442142
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,7 +940,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 659859772}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a2dae7bef18de648b141c50f11bff52, type: 3}
   m_Name: 
@@ -929,6 +949,13 @@ MonoBehaviour:
   SendToPort: 6448
   ListenerPort: 12000
   controller: {fileID: 1177099932}
+  bulletPrefab: {fileID: 1006918499204824, guid: 695188c841754c24ba91b13b630c317f,
+    type: 2}
+  rightBulletSpawn: {fileID: 827591535}
+  leftBulletSpawn: {fileID: 1585133172}
+  fireRate: 0.4
+  maxAmmo: 10
+  reloadSpeed: 1
 --- !u!114 &659859776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -957,7 +984,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 659859772}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b0e600319205a5458ec6c044dd64d95, type: 3}
   m_Name: 
@@ -3190,7 +3217,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1867519482}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2364eab2a6304b1418fda8471ceadc14, type: 3}
   m_Name: 
@@ -4095,7 +4122,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 127730, guid: c8515ebee271c0649b9db1321f3026a4, type: 2}
       propertyPath: m_TagString
-      value: RightHand
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c8515ebee271c0649b9db1321f3026a4, type: 2}

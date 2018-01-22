@@ -11,7 +11,7 @@ public class OSCReceiver : MonoBehaviour {
 
 	private Osc handler;
 	private int sig1 = 0;
-	private int sig2 = 0;
+	//private int sig2 = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -25,24 +25,24 @@ public class OSCReceiver : MonoBehaviour {
 
 
 		//Tell Unity to call function Example1 when message /wek/outputs arrives
-		handler.SetAddressHandler("/wek/outputs", Example1);
+		handler.SetAddressHandler("/wek/outputs", Receive);
 		Debug.Log("OSC Running");
 	}
 
 	
 	// Update is called once per frame
 	void Update () {
-		GameObject hand = GameObject.FindGameObjectWithTag("RightHand");
 
-		if (Input.GetKeyDown (KeyCode.Alpha1)){
-			hand.transform.Rotate (0, sig1, sig2);
-			Debug.Log( "1 key was pressed." );}
 	}
 
-	public void Example1(OscMessage oscMessage ){
-		Debug.Log("Called Example One > " + Osc.OscMessageToString(oscMessage));
-		Debug.Log("Message Values > " + oscMessage.Values[0] + " " + oscMessage.Values[1]);
-//		sig1 = oscMessage.Values[0];
+	public void Receive(OscMessage oscMessage ){
+		//Debug.Log("Called Example One > " + Osc.OscMessageToString(oscMessage));
+		//Debug.Log("Message Values > " + oscMessage.Values[0] + " " + oscMessage.Values[1]);
+		sig1 = (int)oscMessage.Values[0];
 //		sig2 = oscMessage.Values[1];
+
+		if (sig1 == 1) {
+			Debug.Log ("1 was pressed");
+		}
 	}
 }
